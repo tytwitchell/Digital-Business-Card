@@ -1,0 +1,143 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    font-family: 'Inter', sans-serif;
+}
+
+body {
+    width: 317px;
+    margin: 25px auto;
+    background-color: #23252C;
+}
+
+.content-container {
+    background-color: #1A1B21;
+    color: #FFFFFF;
+    padding: 0 2.20rem 1px;
+
+}
+
+.info-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.propic {
+    width: 317px;
+    height: 317px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    margin-bottom: 1.5em;
+    opacity: .9;
+}
+
+.info-container > h1 {
+    margin: 0;
+    font-size: 1.56em;
+    color: #FFFFFF;
+}
+
+.info-container> h4 {
+    color: #F3BF99;
+    font-size: 0.8rem;
+    font-weight: 400;
+    margin-top: .25rem
+}
+
+.link-portfolio {
+    text-decoration: none;
+    color: #F5F5F5;
+    font-size: 0.64rem;
+    line-height: 150%; 
+    margin: .75rem 0;
+}
+
+.link-container {
+    display: flex;
+    gap: 1rem;
+    
+}
+
+.link-email,
+.link-linkedin {
+    text-decoration: none;
+    border: none;
+    border-radius: 6px;
+    display: flex;
+    width: 7.1875rem;
+    padding: 0.5625rem 0.8125rem 0.5625rem 0.6875rem;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+
+
+.link-email {
+    color: #374151;
+    background-color: #FFFFFF;
+}
+
+.link-linkedin {
+    color: #FFFFFF;
+    background-color: #5093E2;
+}
+
+.link-img {
+    margin: 0;
+    padding: 0;
+}
+
+.about-container,
+.interests-container {
+    margin-top: 1.5rem
+}
+
+.section-title {
+    color: #F5F5F5;
+    font-size: 1rem;
+    line-height: 150%; /* 1.5rem */
+}
+
+.section-p {
+    color: #DCDCDC;
+    font-size: 0.64rem;
+    line-height: 150%; /* 0.96rem */
+    margin-bottom: 2.5em
+}
+
+footer {
+    height: 4rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 3.75em;
+    background-color: #161619;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+
+}
+
+.social-links {
+    width: 1.5625rem;
+    height: 1.5625rem;
+    color: #918E9B;
+    
+}
+
+
+/**** hover properties ****/
+
+.link-email:hover,
+.link-linkedin:hover,
+.link-email:focus,
+.link-linkedin:focus,
+.link-portfolio:hover,
+.link-portfolio:focus {
+    opacity: .9;
+    transform: scale(.99)
+}
+
+
