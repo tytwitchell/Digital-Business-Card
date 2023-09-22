@@ -401,18 +401,18 @@ var _react2 = _interopRequireDefault(_react);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-function About() {
+function About(props) {
     return _react2.default.createElement(
         "section",
         { className: "about-container" },
         _react2.default.createElement(
             "h2",
-            { className: "section-title" },
+            { style: props.stylesColor, className: "section-title" },
             "About"
         ),
         _react2.default.createElement(
             "p",
-            { className: "section-p" },
+            { style: props.stylesColor, className: "section-p" },
             "I am a frontend developer with a particular interest in making things simple and automating daily tasks. I try to keep up with security and best practices, and am always looking for new things to learn."
         )
     );
@@ -436,10 +436,10 @@ var _react2 = _interopRequireDefault(_react);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-function Footer() {
+function Footer(props) {
     return _react2.default.createElement(
         "footer",
-        null,
+        { style: props.stylesFooter },
         _react2.default.createElement("img", { src: "./images/github.png", className: "social-links" }),
         _react2.default.createElement("img", { src: "./images/location.png", className: "social-links" }),
         _react2.default.createElement("img", { src: "./images/twitter.png", className: "social-links" })
@@ -464,25 +464,38 @@ var _react2 = _interopRequireDefault(_react);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-//   <img src="./images/sun_moon.png" className="light-dark-img"/>
-function Info() {
+function Info(props) {
+
     return _react2.default.createElement(
         "section",
         { className: "info-container" },
-        _react2.default.createElement("img", { src: "./images/TTProPic.png", className: "propic" }),
+        _react2.default.createElement(
+            "div",
+            { className: "propic-container" },
+            _react2.default.createElement("img", { src: "./images/TTProPic.png", className: "propic" }),
+            _react2.default.createElement("img", {
+                src: "./images/sun-and-moon.png",
+                className: "light-dark-img",
+                onClick: props.toggleDarkMode,
+                style: props.stylesRotate
+            })
+        ),
         _react2.default.createElement(
             "h1",
-            null,
+            { style: props.stylesColor },
             "Tyler Twitchell"
         ),
         _react2.default.createElement(
             "h4",
-            null,
+            { style: props.stylesColorAlt },
             "Frontend Developer"
         ),
         _react2.default.createElement(
             "a",
-            { href: "#", className: "link-portfolio" },
+            {
+                href: "#",
+                style: props.stylesColor,
+                className: "link-portfolio" },
             "tylertwitchell@website.com"
         ),
         _react2.default.createElement(
@@ -522,18 +535,18 @@ var _react2 = _interopRequireDefault(_react);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-function Interests() {
+function Interests(props) {
     return _react2.default.createElement(
         "section",
         { className: "interests-container" },
         _react2.default.createElement(
             "h2",
-            { className: "section-title" },
+            { style: props.stylesColor, className: "section-title" },
             "Interests"
         ),
         _react2.default.createElement(
             "p",
-            { className: "section-p" },
+            { style: props.stylesColor, className: "section-p" },
             "Music producer. Mountain lover.  Self-starter. Dog person. Ex-coffee addict. Current matcha enthusiast. Concert goer. Inspired human. "
         )
     );
@@ -592,6 +605,8 @@ if (process.env.NODE_ENV === 'production') {
 "use strict";
 
 
+var _slicedToArray = function () { function sliceIterator(arr, i) { var _arr = []; var _n = true; var _d = false; var _e = undefined; try { for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"]) _i["return"](); } finally { if (_d) throw _e; } } return _arr; } return function (arr, i) { if (Array.isArray(arr)) { return arr; } else if (Symbol.iterator in Object(arr)) { return sliceIterator(arr, i); } else { throw new TypeError("Invalid attempt to destructure non-iterable instance"); } }; }();
+
 var _react = __webpack_require__(1);
 
 var _react2 = _interopRequireDefault(_react);
@@ -619,17 +634,53 @@ var _footer2 = _interopRequireDefault(_footer);
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function RenderHtml() {
+    var _React$useState = _react2.default.useState(true),
+        _React$useState2 = _slicedToArray(_React$useState, 2),
+        darkMode = _React$useState2[0],
+        setDarkMode = _React$useState2[1];
+
+    function toggleDarkMode() {
+        setDarkMode(function (prevDarkMode) {
+            return !prevDarkMode;
+        });
+    }
+
+    var stylesRotate = {
+        transform: darkMode ? "none" : "rotate(180deg)",
+        transition: 'transform 0.5s ease'
+    };
+
+    var styles = {
+        backgroundColor: darkMode ? "#1A1B21" : "#F5F5F5"
+    };
+
+    var stylesColor = {
+        color: darkMode ? "#FFFF" : "#2B283A"
+    };
+
+    var stylesColorAlt = {
+        color: darkMode ? "#F3BF99" : "#F47D27"
+    };
+
+    var stylesFooter = {
+        backgroundColor: darkMode ? "#161619" : "#D5D4D8"
+    };
+
     return _react2.default.createElement(
-        'body',
+        'div',
         null,
         _react2.default.createElement(
             'div',
-            { className: 'content-container' },
-            _react2.default.createElement(_info2.default, null),
-            _react2.default.createElement(_about2.default, null),
-            _react2.default.createElement(_interests2.default, null)
+            { className: 'content-container', style: styles },
+            _react2.default.createElement(_info2.default, {
+                stylesColor: stylesColor,
+                stylesColorAlt: stylesColorAlt,
+                stylesRotate: stylesRotate,
+                toggleDarkMode: toggleDarkMode }),
+            _react2.default.createElement(_about2.default, { stylesColor: stylesColor }),
+            _react2.default.createElement(_interests2.default, { stylesColor: stylesColor })
         ),
-        _react2.default.createElement(_footer2.default, null)
+        _react2.default.createElement(_footer2.default, { stylesFooter: stylesFooter })
     );
 }
 
