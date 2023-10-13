@@ -513,10 +513,10 @@ function Info(props) {
         _react2.default.createElement(
             "a",
             {
-                href: "#",
+                href: "https://portfolio-tylertwitchell.netlify.app/",
                 style: props.stylesColor,
                 className: "link-portfolio" },
-            "tylertwitchell@website.com"
+            "tylertwitchell-portfolio@netlify.app"
         ),
         _react2.default.createElement(
             "div",

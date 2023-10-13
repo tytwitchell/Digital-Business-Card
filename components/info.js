@@ -18,9 +18,9 @@ export default function Info(props) {
             <h1 style={props.stylesColor}>Tyler Twitchell</h1>
             <h4 style={props.stylesColorAlt}>Frontend Developer</h4>
             <a 
-                href= "#" 
+                href= "https://portfolio-tylertwitchell.netlify.app/" 
                 style={props.stylesColor}
-                className="link-portfolio">tylertwitchell@website.com
+                className="link-portfolio">tylertwitchell-portfolio@netlify.app
             </a>
             <div className="link-container">
                 <a href="mailto:tytwitchell@gmail.com" className="link-email">
